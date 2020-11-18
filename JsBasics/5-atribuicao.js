@@ -12,3 +12,5 @@ const nomeCompleto = primeiroNome + " " + sobrenome;  //operacao de sobrescrita
 console.log(nomeCompleto); 
 
 idade = 27;
+idade++;
+console.log(idade);
