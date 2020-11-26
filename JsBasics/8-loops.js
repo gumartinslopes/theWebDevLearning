@@ -45,3 +45,7 @@ else{
 
 
 console.log("Destinos possíveis: " + listaDestinos);
+
+for(let contador = 7 ;contador > 0 ;contador-- ){
+    console.log("Hello");
+}
