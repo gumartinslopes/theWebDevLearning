@@ -7,8 +7,10 @@
 
     pincel.fillStyle = 'lightgray';
     pincel.fillRect(0, 0, 600, 400);
-
-    var raio = 10;
+    
+    var raioInicial = 10;
+    var randomX;
+    var randomY;
 
     function desenhaCirculo(x, y, raio, cor) {
 
@@ -16,28 +18,40 @@
         pincel.beginPath();
         pincel.arc(x, y, raio, 0, 2 * Math.PI);
         pincel.fill();
+
+    }
+    
+
+    function desenhaAlvo(x, y){
+        desenhaCirculo(x, y, raioInicial+20, "red");
+        desenhaCirculo(x, y, raioInicial+10, "white");
+        desenhaCirculo(x, y, raioInicial, "red");
+    }
+    
+    function limpaTela() {
+        pincel.clearRect(0, 0, 600, 400);
     }
 
-    desenhaCirculo(300,200, raio + 20, 'red'); // maior círculo
-    desenhaCirculo(300,200, raio + 10, 'white');
-    desenhaCirculo(300,200, raio, 'red'); // menor circulo
-
-    function dispara(evento) {
-
-        var x = evento.pageX - tela.offsetLeft;
-        var y = evento.pageY - tela.offsetTop;
-        if (x > 300 - raio 
-            && x < 300 + raio
-                && y > 200 - raio 
-                    && y < 200 + raio) {
-
-            alert('Acertou miserávi');
-        }  
-        else{
-            alert('errou otário');
-        }
+    function sorteiaPosicao(valorMaximo){
+        return Math.floor(Math.random() * valorMaximo);
+    }
+    
+    function atualizaTela(){
+        limpaTela();
+        randomX = sorteiaPosicao(600);
+        randomY = sorteiaPosicao(400);
+        desenhaAlvo(randomX, randomY);
     }
 
+    function dispara(evento){
+           var x = evento.pageX - tela.offsetLeft;
+           var y = evento.pageY - tela.offsetTop;
+
+           if(((x > randomX - raioInicial) && (x < randomX + raioInicial)) && ((y > randomY - raioInicial) && (y < randomY + raioInicial))){
+                alert("Acertou miserável");
+           }
+    }
     tela.onclick = dispara;
-
+    setInterval(atualizaTela, 1000);
+    
 </script>
