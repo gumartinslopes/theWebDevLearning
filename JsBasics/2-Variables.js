@@ -17,3 +17,8 @@ function f(){
 }
 f();
 console.log(`Esse é o x de fora -> ${x} e o y vazou o escopo -> ${y}`); // 0, 1
+
+var name1 = "Jhony'Lee"
+var name2 = "Jhonny \" Lee"
+
+console.log(name1 , name2);
