@@ -1,5 +1,5 @@
 # theWebDevLearning
-### This is my repositories for my studies in web development and practice a little bit of git.
+### This is my repository for my studies in web development and practice a little bit of git.
 I may upload this everyday so keep your eye on :)
 
  
