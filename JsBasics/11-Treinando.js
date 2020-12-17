@@ -32,3 +32,33 @@ console.log('\nThis are the current employees from Mr Burn\'s nuclear power plan
 for(var i = 0; i < employeesNames.length; i++){
     console.log(' * ' + employeesNames[i]);
 }
+
+/*--------------Exercicios---------- */
+//1 - declare uma variável weight
+var weight;
+
+// 2 - qual o tipo de weight?
+console.log(typeof weight);
+
+//declare e atribua name, age, stars  e isSubscribed
+/* let name = "Jhon";
+let age = 25;
+let stars = 4.5;
+let isSubscribed = true; */
+
+// 4 - crie um array de estudantes 
+let student1 = {
+    name: "Greg",
+    age: 18,
+    isAproved: false,
+}
+const student2 = {
+    name: 'Jhon',
+    age: 15,
+    isAproved: true,
+};
+let students = [
+    student1,
+    student2,
+];
+console.log(students);
