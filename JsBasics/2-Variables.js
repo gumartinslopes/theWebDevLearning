@@ -17,5 +17,4 @@ console.log(clima, temperatura);
     console.log(pais);
     console.log(cidade);
 }
-console.log(pais);
-console.log(cidade);
+// isso da erro -> console.log(cidade);
