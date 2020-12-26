@@ -4,7 +4,7 @@ I may upload this everyday so keep your eye on :)
 
  
  #### 🛠 Nowadays you'll find here:
- - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+ - [JavaScript sintax](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
  - [Html](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
  - [Css](https://www.w3schools.com/css/)
  
