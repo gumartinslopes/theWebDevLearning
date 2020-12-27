@@ -1,4 +1,4 @@
-class Account{
+export class Account{
     agency;
     _balance = 0; 
     

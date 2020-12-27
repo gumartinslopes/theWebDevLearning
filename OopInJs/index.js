@@ -1,3 +1,9 @@
+import {Customer} from "./Customer.js"
+import {Account} from "./Account.js"
+
+const customer1 = new Customer();
+customer1.name = 'Indiana Jones';
+
 const account1 = new Account();
 account1.agency = '1001';
 
