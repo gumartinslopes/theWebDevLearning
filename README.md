@@ -8,4 +8,14 @@ I may upload this everyday so keep your eye on :)
  - [Html](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
  - [Css](https://www.w3schools.com/css/)
  
+ 
+ 
+ ### Stuff to learn
+ - [x] Html & Css basic syntax.
+ - [x] JavaScript basic syntax.
+ - [ ] Oop in Js.
+ - [ ] Web accessibility.
+ 
+ 
+ 
 ![Badge](https://img.shields.io/badge/License-M.I.T-success)
