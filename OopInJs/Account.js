@@ -1,10 +1,30 @@
+import { Customer } from "./Customer.js";
+
 export class Account{
-    customer;
     agency;
     city;
 
+    _customer;
+    _balance = 0;
 
-    _balance = 0; 
+    set customer(newValue){
+        if(newValue instanceof Customer){
+            this._customer = newValue;
+        }
+    }
+    get customer(){
+        return this._customer;
+    }
+    
+    get balance(){
+        return this._balance;
+    }
+
+    constructor(customer, agency){
+        this.customer = customer;   //aqui utilizamos o acessor de customer
+        this.agency = agency;
+        this.totalNumberOfAccounts++;
+    }
     
     deposit(value){
         if(value >= 0){
