@@ -1,28 +1,10 @@
-import { Customer } from "./Customer.js";
-
-export class Account{
-    static totalNumberOfAccounts = 0;
-    
-    set customer(newValue){
-        if(newValue instanceof Customer){
-            this._customer = newValue;
-        }
-    }
-    get customer(){
-        return this._customer;
-    }
-    
-    get balance(){
-        return this._balance;
+export class SavingsAccount{
+    constructor(initialBalance, customer, agency){
+        this._balance = initialBalance;
+        this._customer = customer;
+        this._agency = agency;
     }
 
-    constructor(customer, agency){
-        this.customer = customer;   //aqui utilizamos o acessor de customer
-        this.agency = agency;
-        this._balance = 0;
-        Account.totalNumberOfAccounts += 1;
-    }
-    
     deposit(value){
         if(value >= 0){
             this._balance += value;
