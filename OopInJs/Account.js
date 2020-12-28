@@ -1,6 +1,7 @@
 import { Customer } from "./Customer.js";
 
 export class Account{
+    static totalNumberOfAccounts = 0;
     agency;
     city;
 
@@ -23,7 +24,7 @@ export class Account{
     constructor(customer, agency){
         this.customer = customer;   //aqui utilizamos o acessor de customer
         this.agency = agency;
-        this.totalNumberOfAccounts++;
+        Account.totalNumberOfAccounts += 1;
     }
     
     deposit(value){
