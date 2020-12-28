@@ -1,5 +1,9 @@
 export class Account{
+    customer;
     agency;
+    city;
+
+
     _balance = 0; 
     
     deposit(value){
@@ -11,6 +15,7 @@ export class Account{
             console.log('Invalid deposit');
         }
     }
+
     withdraw(value) {
         if(this._balance >= value){
             this._balance -= value;
@@ -20,5 +25,10 @@ export class Account{
         else{
             console.log('Insufficient money');
         }
+    }
+
+    transfer(value, account){
+        const withdrawValue = this.withdraw(value);
+        account.deposit(withdrawValue);
     }
 }
