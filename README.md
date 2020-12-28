@@ -7,7 +7,7 @@ I may upload this everyday so keep your eye on :)
  - [JavaScript sintax](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
  - [Html](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
  - [Css](https://www.w3schools.com/css/)
- 
+ - [OOP](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Objetos/Object-oriented_JS)
  
  
  ### Stuff to learn
