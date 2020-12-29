@@ -2,6 +2,13 @@ import { Customer } from "./Customer.js";
 
 export class Account{
     static totalNumberOfAccounts = 0;
+    constructor(initialBalance, customer, agency){
+        this.customer = customer;   //aqui utilizamos o acessor de customer
+        this.agency = agency;
+        this._balance = initialBalance;
+
+        Account.totalNumberOfAccounts += 1;
+    }
     
     set customer(newValue){
         if(newValue instanceof Customer){
@@ -16,28 +23,22 @@ export class Account{
         return this._balance;
     }
 
-    constructor(customer, agency){
-        this.customer = customer;   //aqui utilizamos o acessor de customer
-        this.agency = agency;
-        this._balance = 0;
-        Account.totalNumberOfAccounts += 1;
-    }
-    
     deposit(value){
         if(value >= 0){
             this._balance += value;
-            console.log(` \$${value}.00 deposited successfully`);
+            console.log(` \$${value} deposited successfully`);
         }  
         else {
             console.log('Invalid deposit');
         }
     }
 
-    withdraw(value) {
+    _withdraw(value, tax) {
+
         if(this._balance >= value){
             this._balance -= value;
-            console.log(` \$${value}.00 successfully withdrawn}`);
-            return value;
+            console.log(` \$${value / tax} successfully withdrawn`);
+            return value / tax;
         }    
         else{
             console.log('Insufficient money');

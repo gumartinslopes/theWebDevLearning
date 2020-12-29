@@ -1,11 +1,16 @@
-import {Customer} from "./Customer.js"
-import {Account} from "./Account.js"
+import { Customer } from "./Customer.js";
+import { CurrentAccount } from "./CurrentAccount.js";
+import { SavingsAccount } from "./SavingsAccount.js";
 
 
 
 const customer1 = new Customer('Indiana Jones Jr', '123456789-10');
-const account1 = new Account(customer1, '1001');
+const currentAccount1 = new CurrentAccount(customer1, '1001');
 
-const savingAccount1 = new SavingsAccount(50, customer1, '1001');
-console.log(savingAccount1);
-console.log(Account.totalNumberOfAccounts);
+const savingAccount1 = new SavingsAccount(customer1, '1001');
+
+savingAccount1.deposit(500);
+
+savingAccount1.withdraw(100);
+
+console.log(savingAccount1._balance);
