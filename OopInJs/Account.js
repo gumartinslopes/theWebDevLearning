@@ -3,10 +3,14 @@ import { Customer } from "./Customer.js";
 export class Account{
     static totalNumberOfAccounts = 0;
     constructor(initialBalance, customer, agency){
+        if(this.constructor == Account){
+            throw new Error("Você não deveria instanciar a classe Account diretamente, pois essa é uma classe abstrata");
+        }
+
         this.customer = customer;   //aqui utilizamos o acessor de customer
         this.agency = agency;
         this._balance = initialBalance;
-
+        
         Account.totalNumberOfAccounts += 1;
     }
     
@@ -15,6 +19,7 @@ export class Account{
             this._customer = newValue;
         }
     }
+    
     get customer(){
         return this._customer;
     }
@@ -37,7 +42,7 @@ export class Account{
 
         if(this._balance >= value){
             this._balance -= value;
-            console.log(` \$${value / tax} successfully withdrawn`);
+            console.log(`\$${value / tax} successfully withdrawn`);
             return value / tax;
         }    
         else{

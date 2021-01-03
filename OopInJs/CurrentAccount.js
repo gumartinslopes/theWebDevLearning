@@ -5,6 +5,7 @@ export class CurrentAccount extends Account{
         super(0, customer, agency);
     }
     withdraw(value){
-        return this._withdraw(value, 1.05);
+        let tax = 1.05;
+        return this._withdraw(value, tax);
     }
 }

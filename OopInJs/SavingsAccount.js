@@ -6,6 +6,7 @@ export class SavingsAccount extends Account{
     }
 
     withdraw(value){
-        return this._withdraw(value, 1.1);
+        let tax = 1.02;
+        return this._withdraw(value, tax);
     }
 }
