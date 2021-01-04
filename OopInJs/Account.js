@@ -38,6 +38,10 @@ export class Account{
         }
     }
 
+    //abstract method
+    withdraw(value){
+        throw new Error("withdraw is an abstract method this shouldn't be caled");
+    }
     _withdraw(value, tax) {
 
         if(this._balance >= value){
