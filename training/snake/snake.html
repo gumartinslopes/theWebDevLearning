@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Js Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Js Snake</h1>
+    <canvas width="600" height="400"></canvas>
+    
+    <script>
+        
+        const screen = document.querySelector("canvas");
+        const brush = screen.getContext("2d"); 
+        
+        var xHead = 300, yHead = 200;
+        var snakeSize = 2;
+        
+        paintBackgroung("#7cfc00");
+        renderPlayer(xHead, yHead);
+        renderPlayer(xHead, yHead)
+    
+        function paintBackgroung(backgroundColor){
+            brush.fillStyle = backgroundColor;
+            brush.fillRect(0, 0, 600, 400);
+        }
+
+        function renderPlayer(x, y){
+            brush.fillStyle = 'red';
+            brush.fillRect(x, y,  10, 10)
+        }
+        
+    </script>
+</body>
+</html>
