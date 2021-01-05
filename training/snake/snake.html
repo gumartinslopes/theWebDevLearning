@@ -9,30 +9,45 @@
 <body>
 
     <h1>Js Snake</h1>
-    <canvas width="600" height="400"></canvas>
+    <canvas width="400" height="400"></canvas>
     
     <script>
-        
-        const screen = document.querySelector("canvas");
-        const brush = screen.getContext("2d"); 
-        
-        var xHead = 300, yHead = 200;
-        var snakeSize = 2;
-        
-        paintBackgroung("#7cfc00");
-        renderPlayer(xHead, yHead);
-        renderPlayer(xHead, yHead)
-    
-        function paintBackgroung(backgroundColor){
-            brush.fillStyle = backgroundColor;
-            brush.fillRect(0, 0, 600, 400);
+        window.onload = function(){
+            const screen = document.querySelector("canvas");
+            const brush = screen.getContext("2d"); 
+            
+            var xHead = 200, yHead = 200;
+            var xFruit = getRandomValue(), yFruit = getRandomValue();
+            var snakeSize = 2;
+
+            paintBackgroung("#7cfc00");
+            
+            renderPlayer(xHead, yHead);
+            renderFruit(xFruit, yFruit);
+            
+
+            function paintBackgroung(backgroundColor){
+                brush.fillStyle = backgroundColor;
+                brush.fillRect(0, 0, 600, 400);
+            }
+
+            function getRandomValue(){
+                var min = 0;
+                var max = 400;
+                return (Math.floor(Math.random() * (max - min)) + min);    
+            }
+            
+            function renderPlayer(x, y){
+                brush.fillStyle = 'black';
+                brush.fillRect(x, y,  10, 10);
+            }
+
+            function renderFruit(x, y){
+                brush.fillStyle = 'red';
+                brush.fillRect(x, y,  10, 10);
+            }
         }
 
-        function renderPlayer(x, y){
-            brush.fillStyle = 'red';
-            brush.fillRect(x, y,  10, 10)
-        }
-        
     </script>
 </body>
 </html>
