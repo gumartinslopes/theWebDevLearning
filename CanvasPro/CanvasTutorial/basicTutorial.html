@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Canvas tutorial</title>
+    <script type="text/javascript">
+      //função acionada ao carregamento da página
+      function draw() {
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d');
+          ctx.fillStyle = 'rgba(150,0,0,0.3)';
+          ctx.fillRect(100, 100, 150, 150); //retângulo criado prenchido
+
+          ctx.strokeStyle = 'rgba(0,150,0,0.4)'
+          ctx.strokeRect(300, 100, 150, 150); //retãngulo apenas com a margem
+
+          ctx.fillStyle = 'rgba(150,0,0,0.3)';
+          ctx.fillRect(100, 300, 150, 150);
+          ctx.clearRect(100,300, 150, 150);//apaga retângulos
+
+          ctx.fillStyle = 'rgba(00,150,0,0.7)';
+          ctx.beginPath();//criamos um path 
+          ctx.moveTo(75, 15);
+          ctx.lineTo(20, 40);
+          ctx.lineTo(130,40);
+          ctx.fill();//preenchemos o triângulo
+
+          //desenhando uma carinha
+          ctx.beginPath();
+          ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // cabeça
+          ctx.moveTo(110, 75);
+          ctx.arc(75, 75, 35, 0, Math.PI, false);  // boca (clockwise)
+          ctx.lineTo(110, 75);
+          ctx.moveTo(65, 65);
+          ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Olho esquerdo
+          ctx.moveTo(95, 65);
+          ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Olho direito
+          ctx.stroke();
+          
+          for (var i = 0; i < 6; i++) {
+          for (var j = 0; j < 6; j++) {
+          ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * i) + ', ' +
+                         Math.floor(255 - 42.5 * j) + ')';
+          ctx.beginPath();
+          ctx.arc(310 + j * 25, 110 + i * 25, 10, 0, Math.PI * 2, true);
+          ctx.stroke();
+      }
+    }
+        }
+        else {
+          alert('Your Browser does not support canvas, sorry bro:(');
+        }
+      }
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid black;}
+    </style>
+  </head>
+  <body onload="draw();">
+    <canvas id="tutorial" width="600" height="400"></canvas>
+  </body>
+</html>
