@@ -14,6 +14,7 @@ I may upload this everyday so keep your eye on :)
  - [x] Html & Css basic syntax.
  - [x] JavaScript basic syntax.
  - [ ] Oop in Js.
+ - [ ] Canvas.
  - [ ] Web accessibility.
  
  
