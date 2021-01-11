@@ -6,3 +6,12 @@ for(var i = 0; i < nomes.length; i++){
     console.log(`${i} - ${nomes[i]}`);
 }
 console.log(cores);
+
+colors = [
+    'red',
+    'green',
+    'blue'
+];
+    
+console.log('the sky is ' + colors[2]);
+console.log(`We have ${colors.length} on the colors array`);
