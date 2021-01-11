@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 1%;
+    text-align: center;
+
+    background-color: #000000;
+    color: #ffffff;
+}
+
+footer{
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.main-infos{
+    
+    
+    background-color: black;
+    color: #ffffff;
+}
+.main-infos img{
+    max-width: 50%;
+    
+}
+.hotel-infos{
+    
+
+}
