@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 header{
     padding: 1%;
     text-align: center;
@@ -11,23 +10,24 @@ header{
     color: #ffffff;
 }
 
-footer{
-    display: block;
-    background-color: #000000;
-    color: #ffffff;
-}
-
 .main-infos{
-    
-    
     background-color: black;
     color: #ffffff;
 }
 .main-infos img{
+    display: inline-block;
     max-width: 50%;
-    
 }
 .hotel-infos{
+    display: inline-block;
     
+}
 
+footer{
+    display: block;
+    text-align: center;
+    padding: 10%;                    
+    background-color: #000000;
+    color: #ffffff;
+    
 }
