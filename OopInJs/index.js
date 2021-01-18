@@ -1,17 +1,17 @@
 import { Customer } from "./Customer.js";
-import { CurrentAccount } from "./CurrentAccount.js";
-import { SavingsAccount } from "./SavingsAccount.js";
-import { SalaryAccount } from "./SalaryAccount.js"
+import { Director } from "./Employees/Director.js"
+import { Manager } from "./Employees/Manager.js"
+import { AuthenticationSystem } from "./AuthenticationSystem.js"
 
+const director1 = new Director('Michael Scott', 10000, "123456789");
+const manager1 = new Manager('Dwight Shrute', 6000, "12345678");
+const customer1 = new Customer('Arnold Shwarzenegger', "12345");
 
+director1.registerPassword(123456);
+manager1.registerPassword(123);
 
-const customer1 = new Customer('Indiana Jones Jr', '123456789-10');
-const currentAccount1 = new CurrentAccount(customer1, '1001');
-const salaryAccount1 = new SalaryAccount(customer1);
-const savingAccount1 = new SavingsAccount(customer1, '1001');
+const customer1Login = AuthenticationSystem.login(customer1, "12345")
+const director1Login = AuthenticationSystem.login(director1, "123456");
+const manager1Login = AuthenticationSystem.login(manager1, "123456789");
 
-savingAccount1.deposit(500);
-
-savingAccount1.withdraw(100);
-
-console.log(savingAccount1._balance);
+console.log(customer1Login, director1Login, manager1Login)

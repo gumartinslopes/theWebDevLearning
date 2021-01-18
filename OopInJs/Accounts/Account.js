@@ -1,4 +1,4 @@
-import { Customer } from "./Customer.js";
+import { Customer } from "../Customer.js";
 
 export class Account{
     static totalNumberOfAccounts = 0;
