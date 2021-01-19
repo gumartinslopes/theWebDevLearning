@@ -15,3 +15,13 @@ colors = [
     
 console.log('the sky is ' + colors[2]);
 console.log(`We have ${colors.length} on the colors array`);
+//criando arrays com construtores
+var weekDays = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'thursday','Friday','Saturday');
+showDays(7);
+console.log(typeof('Jhon'));
+function showDays(max){
+    console.log(`the days of the week are:`);
+    for(var i = 0; i < max;i++){
+        console.log(weekDays[i] + ', \n');
+    }
+}
