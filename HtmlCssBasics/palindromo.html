@@ -8,13 +8,42 @@
 <body>
     <header><h1>Palindro<span>.mo</span></h1></header>
     <section id = "main">
-        <h2>Insira uma palavra para verificar se é um palíndromo</h2>
-        <input type="text" placeholder="palavra">
+        <p>Insira uma palavra para verificar se é um palíndromo</p>
+        <input type="text" placeholder="palavra" id="palavra">
+        <button id="check-button" onclick=checkPalindromo()>verificar</button>
         <p id = "resposta"></p>
         
     </section>
     <script>
+        
+        var resposta = document.getElementById('resposta');
+        function checkPalindromo(){
+            var palavra = document.getElementById('palavra').value;
+            console.log(palavra);
+            if(ehPalindromo(palavra)){
+                resposta.innerText = `A palavra ${palavra} é um palíndromo!`; 
+                resposta.style.color = '#03fc73'
+            }
+             else {
+                resposta.innerText = `A palavra ${palavra} não é um palíndromo!`;
+                resposta.style.color = '#fc0324';
+            }
+        }
+        function ehPalindromo(palavra){
+            
+            var i = 0;
+            var j = palavra.length - 1;
+            var result = true;
+    
+            do{
+                if(palavra[i] !=  palavra[j]) 
+                    result = false;  
+                i++;
+                j--;
+            }while(i < palavra.length / 2);
 
+            return result;
+        }
     </script>
 </body>
 </html>
