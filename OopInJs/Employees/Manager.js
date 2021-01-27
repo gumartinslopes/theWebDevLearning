@@ -1,8 +1,12 @@
-import { Employee } from './Employee.js'
+import{Employee} from './Employee.js'
 
 export class Manager extends Employee{
     constructor(name, salary, cpf){
         super(name, salary, cpf);
         this._bonificacao = 1.1;
+    }
+
+    get name(){
+        return this._name;
     }
 }

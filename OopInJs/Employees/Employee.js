@@ -7,7 +7,7 @@ export class Employee{
         this._password;
     }
 
-    autenticathe(password){
+    authenticate(password){
         return password == this._password;
     }
 

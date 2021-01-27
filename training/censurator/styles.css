@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+header{
+    text-align: center;
+    padding: 30px;
+    color: #ffffff;
+    background-color: #000000;
+}
+main{
+    text-align: center;
+}
+#button-submit{
+    display: block;
+}

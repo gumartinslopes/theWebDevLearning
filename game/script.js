@@ -2,27 +2,53 @@ var gameScreen = document.getElementById('game');
 var player = document.getElementById('player');
 var block = document.getElementById('block');
 
-setTimeout(startGame, 800);
 
-function startGame(){
+setTimeout(game, 800);
+
+
+function game(){
     gameScreen.onclick = jump;
-
+    var currentPoints = 0;
+    
+    var playerAlive = true;
     var checkDeath = setInterval(verifyPlayerDeath, 10); 
+    
+    renderObstacle();
 
     function jump() {
         if(player.classList != 'animate-jump')
             player.classList.add('animate-jump'); 
         setTimeout(function(){
             player.classList.remove('animate-jump');
-        },500);    
+        },500);   
+         updateScore();
+    }
+
+    function renderObstacle(params) {
+        block.style.animation = 'block 1s infinite';
     }
 
     function verifyPlayerDeath() {
         if(checkCollision(player, block)){
-            
             block.style.display = 'none';
             alert('u luse :(');
-        }        
+            playerAlive = false;
+        }       
+    }
+
+    function updateScore() {
+        if(playerAlive){
+            currentPoints++;
+            var score = document.getElementById('score');
+            score.innerText = currentPoints;
+        }
+    }
+
+    function  updateHiScore() {
+        var hiScore = document.getElementById('hiScore');
+        if(currentPoints > parseInt(currentHiScore.innerText)){
+            hiScore.innerText = currentPoints;
+        }
     }
 
     function checkCollision(a, b){
@@ -41,5 +67,3 @@ function startGame(){
     }
 
 }
-
-

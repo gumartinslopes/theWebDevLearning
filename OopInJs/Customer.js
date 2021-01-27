@@ -4,12 +4,16 @@ export class Customer{
     }
 
     constructor(name, cpf, password){
-        this.name = name;
+        this._name = name;
         this._cpf = cpf;
         this._password = password; 
     }
 
-    autenticathe(password){
-        return password == this.password;
+    authenticate(password){
+        return password == this._password;
+    }
+
+    get name(){
+        return this._name;
     }
 }
