@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your window</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #control-section{
+            margin: 40px;
+            text-align: center;
+        }
+        button{
+            margin: 20px;
+        }
+        h1, h2{ 
+            text-align: center;
+            color:green;
+        }
+        #infos{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Here's some info about your browser</h1>
+    </br>
+    
+    <div id = "infos"></div>
+    <section id = "control-section"><button id="browser-infos">Browser</button>
+        <button id="history-infos">History</button>
+        <button id="screen-infos">Screen</button></section>
+    <script>
+        const updateInfos = () =>{
+            var infos = document.getElementById('infos');
+            
+            var btnBrowser = document.getElementById('browser-infos');
+            var btnHistory = document.getElementById('history-infos');
+            var btnScreen = document.getElementById('screen-infos');
+
+            baseMsg = 'Choose one of the buttons to see your infos';
+            infos.innerHTML = baseMsg;
+            btnBrowser.onclick = updateBrowserInfos;
+            btnHistory.onclick = updateHistoryInfos;
+            btnScreen.onclick = updateScreenInfos;
+            
+            function updateBrowserInfos(){
+                infos.innerHTML = `<h2>Browser infos</h2>
+                <ul>
+                    <li>Window width: ${window.innerWidth}px</li>
+                    <li>Window height: ${window.innerHeight}px</li>
+                    <li>Current page : ${window.location.hostname}</li>
+                </ul>
+                </br>`
+                
+            }
+
+            function updateHistoryInfos(){
+                infos.innerHTML = `<h2>History</h2>
+                <p>You visisted ${window.history.length} websites on this window</p>
+                <p>Last time modified: ${document.lastModified}</p>
+                </br>`
+                
+            }
+            function updateScreenInfos(){
+                infos.innerHTML =`<h2>Screen</h2>
+                <p>width: ${window.screen.width} </p>
+                <p>height: ${window.screen.height}</p>`;
+            }
+            
+            
+        }
+        updateInfos();
+    </script>
+</body>
+</html>

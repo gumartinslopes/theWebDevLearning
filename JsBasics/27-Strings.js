@@ -38,3 +38,7 @@ console.log(kiwi);
 var phrase = "I'm the king >:[";
 var newPhrase = phrase.replace('the king', 'Batman');
 console.log(newPhrase);
+
+//trim remove espaços em branco no início e no final da palavra
+var word = '                           Ua uauaua ua';
+console.log(word.trim());
