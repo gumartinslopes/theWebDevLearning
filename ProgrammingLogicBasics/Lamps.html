@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamps</title>
+</head>
+<body>
+    <h2>Lamps</h2>
+    <p>Here's a lamp for you to play:)</p>
+    <img src="../images/ProgrammingLogicBasics/LampOff.png" id="lamp-image">
+    <button id = "lamp-switch">Click me</button>
+</body>
+<script>
+    var lampOn = false;
+    var lamp = document.getElementById('lamp-image');
+    var lampSwitch = document.getElementById('lamp-switch');
+    
+    lampSwitch.onclick = turn;
+    function turn(){
+        if(lampOn == true){
+            lampOn = false;
+            lamp.src = '../images/ProgrammingLogicBasics/LampOff.png';
+        }
+        else{
+            lampOn = true;
+            lamp.src = '../images/ProgrammingLogicBasics/LampOn.png';
+        }
+    }
+    
+    
+</script>
+</html>
