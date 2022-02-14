@@ -13,8 +13,8 @@ I may upload this everyday so keep your eye on :)
  ### Stuff to learn
  - [x] Html & Css basic syntax.
  - [x] JavaScript basic syntax.
- - [ ] Oop in Js.
- - [ ] Canvas.
+ - [x] Oop in Js.
+ - [x] Canvas.
  - [ ] Web accessibility.
  
  
